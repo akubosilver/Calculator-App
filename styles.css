@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body {
+    --general-font: 'League Spartan', sans-serif;
+    --bg-color: hsl(222, 26%, 31%);
+    --text-color: hsl(0, 0%, 100%);
+    --previous-color: hsl(0, 10%, 80%);
+    --toggle-keypad-bg: hsl(223, 31%, 20%);
+    --toggle-btn-color: hsl(6, 63%, 50%);
+    --display-screen-color: hsl(224, 36%, 15%);
+    --number-key-bg-color: hsl(30, 25%, 89%);
+    --number-key-text-color: hsl(221, 14%, 31%);
+    --number-key-shadow-color: hsl(224, 28%, 35%);
+    --delete-reset-key-color: hsl(225, 21%, 49%);
+    --delete-reset-shadow: hsl(224, 28%, 35%);
+    --equal-btn-bg-color: hsl(6, 63%, 50%);
+    --equal-btn-shadow-color: hsl(6, 70%, 34%);
+    --equal-btn-text-color: hsl(0, 0%, 100%);
+    --delRes-hover: hsl(225, 21%, 70%);
+    --equal-btn-hover: hsl(6, 63%, 70%);
+    --delRes-text-color: hsl(0, 0%, 100%);
+    --numbers-hover: hsl(0, 0%, 100%);
+
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-color);
+    font-family: var(--general-font);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transition: all 500ms;
+}
+body.dark {
+    --bg-color: hsl(268, 75%, 9%);
+    --text-color: hsl(52, 100%, 62%);
+    --previous-color: hsl(52, 100%, 90%);
+    --toggle-keypad-bg: hsl(268, 71%, 12%);
+    --toggle-btn-color: hsl(176, 100%, 44%);
+    --display-screen-color: hsl(268, 71%, 12%);
+    --number-key-bg-color: hsl(268, 47%, 21%);
+    --number-key-text-color: hsl(52, 100%, 62%);
+    --number-key-shadow-color: hsl(290, 70%, 36%);
+    --delete-reset-key-color: hsl(281, 89%, 26%);
+    --delete-reset-shadow: hsl(285, 91%, 52%);
+    --equal-btn-bg-color: hsl(176, 100%, 44%);
+    --equal-btn-shadow-color: hsl(177, 92%, 70%);
+    --equal-btn-text-color: hsl(198, 20%, 13%);
+    --delRes-hover: hsl(281, 89%, 60%);
+    --delRes-text-color: hsl(0, 0%, 100%);
+    --equal-btn-hover: hsl(176, 100%, 70%);
+    --numbers-hover: hsl(281, 89%, 50%);
+    
+    transition: all 500ms;
+}
+body.light {
+    --bg-color: hsl(0, 0%, 90%);
+    --text-color: hsl(60, 10%, 19%);
+    --previous-color: hsl(60, 10%, 50%);
+    --toggle-keypad-bg: hsl(0, 5%, 81%);
+    --toggle-btn-color: hsl(25, 98%, 40%);
+    --display-screen-color: hsl(0, 0%, 93%);
+    --number-key-bg-color: hsl(45, 7%, 89%);
+    --number-key-text-color: hsl(60, 10%, 19%);
+    --number-key-shadow-color: hsl(35, 11%, 61%);
+    --delete-reset-key-color: hsl(185, 42%, 37%);
+    --delete-reset-shadow: hsl(185, 58%, 25%);
+    --equal-btn-bg-color: hsl(25, 98%, 40%);
+    --equal-btn-shadow-color: hsl(25, 99%, 27%);
+    --equal-btn-text-color: hsl(0, 0%, 100%);
+    --delRes-hover: hsl(185, 42%, 60%);
+    --delRes-text-color: hsl(0, 0%, 100%);
+    --equal-btn-hover: hsl(6, 63%, 70%);
+    --numbers-hover: hsl(0, 0%, 100%);
+
+    transition: all 500ms;
+}
+.calculator {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+   width: 20rem;
+   height: 25rem;
+   margin-top: 8%;
+   user-select: none;
+}
+/* head */
+.toggle-theme {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.toggle-theme h3 {   
+    color: var(--text-color);
+}
+.theme {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-color);
+}
+.theme span {
+    font-size: 0.5em;
+    font-weight: normal;
+    font-family: sans-serif;
+}
+.theme-title {
+    margin-top: 1em;
+    margin-right: 2em;
+}
+.switch-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.theme-number {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.box {
+    border-radius: 1000px;
+    background-color: var(--toggle-keypad-bg);
+    padding: 0 0.3em;
+    position: relative;
+}
+.radio-container {
+    display: inline-flex;
+    align-items: center;
+}
+.radio-container label {
+    cursor: pointer;
+    display: flex;
+}
+.radio-container input[type='radio'] {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    position: absolute;
+}
+.radio-container .input1 {
+    right: 2.5em;
+}
+.radio-container .input2 {
+    right: 1.3em;
+}
+.radio-container .input3 {
+    right: 0.15em;
+}
+.radio-container label::before {
+    content: '';
+    width: 0.7em;
+    height: 0.7em;
+    background-color: inherit;
+    border-radius: 50%;
+    margin-top: 0.2em;
+    margin-left: 0.05em;
+}
+.radio-container input:hover + label::before {
+    background-color: var(--equal-btn-hover);
+}
+.radio-container input:checked + label::before {
+    background-color: var(--equal-btn-bg-color);
+}
+/* display screen */
+.display {
+    width: 100%;
+    height: 5em;
+    background-color: var(--display-screen-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    padding-right: 1em;
+    border-radius: 0.3em;
+}
+.previous-display {
+    font-size: 1.4em;
+    color: var(--previous-color);
+}
+.current-display {
+    font-size: 2.0em;
+    color: var(--text-color);
+    word-break: break-all; 
+}
+/* btn-section */
+.btn-section {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(45px, 66px));
+    grid-template-rows: repeat(5, 35px);
+    grid-gap: 0.5em;
+    margin-top: 1em;
+    background-color: var(--toggle-keypad-bg);
+    border-radius: 0.3em;
+    justify-items: center;
+    padding: 1em;
+}
+.numbers {
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.2em;
+    font-family: var(--general-font);
+    color: var(--number-key-color);
+    width: 3em;
+    height: 1.5em;
+    cursor: pointer;
+    background-color: var(--number-key-bg-color);
+    border-radius: 0.3em;
+    box-shadow: 0 2px 1px var(--number-key-shadow-color);
+    transition: background-color 200ms;
+}
+.numbers:hover {
+    background-color: var(--numbers-hover);
+}
+.span-two {
+    border: none;
+    outline: none;
+    background: none;
+    font-family: var(--general-font);
+    grid-column: span 2;
+    width: 10em;
+    border-radius: 0.3em;
+    cursor: pointer;
+}
+.delRes {
+    color: var(--delRes-text-color);
+    background-color: var(--delete-reset-key-color);
+    box-shadow: 0 2px 1px var(--delete-reset-shadow);
+    transition: background-color 200ms;
+}
+.delRes:hover {
+    background-color: var(--delRes-hover);
+}
+.equal-btn {
+    color: var(--equal-btn-text-color);
+    background-color: var(--equal-btn-bg-color);
+    box-shadow: 0 2px 1px var(--equal-btn-shadow-color);
+    transition: background-color 200ms;
+}
+.equal-btn:hover {
+    background-color: var(--equal-btn-hover);
+}
+/* media qeuries */
+@media (max-width: 320px) {
+    .calculator {
+        width: 15rem;
+    }
+    .numbers {
+        width: 2.5em;
+        height: 1.7em;
+    }
+    .span-two {
+        width: 7.5em;
+    }
+    .current-display {
+        font-size: 1.8em;
+    }
+}
+@media (max-width: 240px) {
+    .calculator {
+        width: 10rem;
+    }
+    .btn-section {
+        grid-template-columns: repeat(4, minmax(25px, 65px));
+    }
+    .numbers {
+        font-size: 1.5em;
+        width: 1.4em;
+        height: 1.2em;
+    }
+    .span-two {
+        width: 4.5em;
+    }
+    .delRes {
+        text-transform: lowercase;
+    }
+}

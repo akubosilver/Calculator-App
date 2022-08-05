@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simple Calculator app with HTML/CSS/Javascript">
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="index.js" type="module"></script>
+</head>
+<body>
+    
+    <div class="calculator">
+        <div class="toggle-theme">
+            <h3>calc</h3>
+            <div class="theme">
+                <span class="theme-title">THEME</span>
+                <div class="switch-box">
+                    <div class="theme-number">
+                        <span>N</span>
+                        <span>L</span>
+                        <span>D</span>
+                    </div>
+                    <div class="box">
+                        <div class="radio-container">
+                            <input checked type="radio" name="theme" class="input1" id="input1">
+                            <label for="input1"></label>
+                        </div>
+                        <div class="radio-container">
+                            <input type="radio" name="theme" class="input2" id="input2">
+                            <label for="input2"></label>
+                        </div>
+                        <div class="radio-container">
+                            <input type="radio" name="theme" class="input3" id="input3">
+                            <label for="input3"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="display">
+            <div class="previous-display" data-previousNum></div>
+            <div class="current-display" data-currentNum></div>
+        </div>
+        <div class="btn-section">
+            <button class="numbers" data-number>7</button>
+            <button class="numbers" data-number>8</button>
+            <button class="numbers" data-number>9</button>
+            <button class="numbers delRes" data-delete>DEL</button>
+            <button class="numbers" data-number>4</button>
+            <button class="numbers" data-number>5</button>
+            <button class="numbers" data-number>6</button>
+            <button class="numbers" data-operator>+</button>
+            <button class="numbers" data-number>1</button>
+            <button class="numbers" data-number>2</button>
+            <button class="numbers" data-number>3</button>
+            <button class="numbers" data-operator>-</button>
+            <button class="numbers" data-number>.</button>
+            <button class="numbers" data-number>0</button>
+            <button class="numbers" data-operator>/</button>
+            <button class="numbers" data-operator>*</button>
+            <button class="span-two delRes" data-clear>RESET</button>
+            <button class="span-two equal-btn" data-equal>=</button>
+        </div>
+    </div>
+</body>
+</html>
